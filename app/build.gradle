@@ -4,6 +4,8 @@ apply plugin: 'kotlin-android'
 
 apply plugin: 'kotlin-android-extensions'
 
+apply plugin: 'de.felixschulze.gradle.hockeyapp'
+
 android {
     compileSdkVersion 28
     defaultConfig {
@@ -24,6 +26,11 @@ android {
 
 tasks.register("mycustomtask") {
         println 'Hello, World!'
+}
+
+hockeyapp {
+    apiToken = "f28ce859d01b4dfd89e28152312ce4b3"
+    appFileNameRegex = ".+\\.apk"
 }
 
 dependencies {
